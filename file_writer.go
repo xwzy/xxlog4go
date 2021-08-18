@@ -101,7 +101,7 @@ func (w *FileWriter) Write(r *Record) error {
 }
 
 func (w *FileWriter) CreateLogFile() error {
-	if err := os.MkdirAll(path.Dir(w.filename), 0755); err != nil {
+	if err := os.MkdirAll(path.Dir(w.filename), 0766); err != nil {
 		if !os.IsExist(err) {
 			return err
 		}
