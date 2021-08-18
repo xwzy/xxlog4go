@@ -107,7 +107,7 @@ func (w *FileWriter) CreateLogFile() error {
 		}
 	}
 
-	if file, err := os.OpenFile(w.filename, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644); err != nil {
+	if file, err := os.OpenFile(w.filename, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666); err != nil {
 		return err
 	} else {
 		w.file = file
